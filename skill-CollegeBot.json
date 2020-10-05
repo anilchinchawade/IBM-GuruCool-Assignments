@@ -1,0 +1,878 @@
+{
+  "intents": [
+    {
+      "intent": "enquiry",
+      "examples": [
+        {
+          "text": "department"
+        },
+        {
+          "text": "Do you have master degree in college"
+        },
+        {
+          "text": "Do you have sports ground"
+        },
+        {
+          "text": "How are the placements in College"
+        },
+        {
+          "text": "How do I contact u"
+        },
+        {
+          "text": "How is the placement in College"
+        },
+        {
+          "text": "How many departments are there"
+        },
+        {
+          "text": "How to contact you"
+        },
+        {
+          "text": "What are the contact details"
+        },
+        {
+          "text": "What are the department names"
+        },
+        {
+          "text": "What is the address of College"
+        },
+        {
+          "text": "What is the contact number"
+        },
+        {
+          "text": "What is the fees for First Year"
+        },
+        {
+          "text": "what is the intake for first year"
+        },
+        {
+          "text": "Which Company recruits the students"
+        },
+        {
+          "text": "Who is the hod of Computer Science"
+        },
+        {
+          "text": "Who is the Principal of the College"
+        }
+      ],
+      "description": "Enquiry by Students/ Parents"
+    },
+    {
+      "intent": "greeting",
+      "examples": [
+        {
+          "text": "ge"
+        },
+        {
+          "text": "Good Afternoon"
+        },
+        {
+          "text": "Good Evening"
+        },
+        {
+          "text": "Good Morning"
+        },
+        {
+          "text": "Good Night"
+        },
+        {
+          "text": "Gud Morn"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        }
+      ],
+      "description": "ChatBot greets the user"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "department",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Civil",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Computer",
+          "synonyms": [
+            "CSE"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Electrical",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "EXTC",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Mechanical",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "enquiry",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "address",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Company",
+          "synonyms": [
+            "companies",
+            "factory",
+            "firm",
+            "recruiters"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "contact",
+          "synonyms": [
+            "communicate",
+            "contacts"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "department",
+          "synonyms": [
+            "departments",
+            "fields",
+            "streams"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "fees",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "hod",
+          "synonyms": [
+            "Head of the department"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "intake",
+          "synonyms": [
+            "intakes"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "master degree",
+          "synonyms": [
+            "PG",
+            "Post Grad",
+            "Post graduation"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "placement",
+          "synonyms": [
+            "placements"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "principal",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "sports ground",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "greeting",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Good Afternoon",
+          "synonyms": [
+            "ga",
+            "Good noon",
+            "Gud Afternoon"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Evening",
+          "synonyms": [
+            "ge",
+            "Good Eve",
+            "Gud Eve",
+            "Gud Evening"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Morning",
+          "synonyms": [
+            "gm",
+            "Gud Morn",
+            "Gud Morning",
+            "Morning"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Night",
+          "synonyms": [
+            "gn",
+            "Gud Night"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Hello",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Hi",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "phonenumber",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "phonenumber",
+          "patterns": [
+            "^(?:(?:\\+|0{0,2})91(\\s*[\\ -]\\s*)?|[0]?)?[789]\\d{9}|(\\d[ -]?){10}\\d$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1601803812310",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "phonenumber",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you for providing your name and phone number. Your phone number $phonenumber will be user for further communication. How May I help You?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "phonenumber": "@phonenumber.literal"
+      },
+      "conditions": "@phonenumber",
+      "dialog_node": "node_1_1601810760650"
+    },
+    {
+      "type": "standard",
+      "title": "greeting",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#greeting || @greeting",
+      "dialog_node": "node_2_1601789140588",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "enquiry",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@enquiry",
+      "dialog_node": "node_4_1601803812310",
+      "previous_sibling": "node_2_1601789140588"
+    },
+    {
+      "type": "standard",
+      "title": "department",
+      "parent": "node_4_1601803812310",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@department",
+      "dialog_node": "node_5_1601809517507"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Very Good Afternoon Dear !!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1601789140588",
+      "conditions": "@greeting:(Good Afternoon)",
+      "dialog_node": "response_10_1601789366178",
+      "previous_sibling": "response_4_1601789343120"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "Departments",
+            "options": [
+              {
+                "label": "Civil Department",
+                "value": {
+                  "input": {
+                    "text": "Civil"
+                  }
+                }
+              },
+              {
+                "label": "Computer Science & Engg Department ",
+                "value": {
+                  "input": {
+                    "text": "Computer "
+                  }
+                }
+              },
+              {
+                "label": "Electrical Department",
+                "value": {
+                  "input": {
+                    "text": "Electrical"
+                  }
+                }
+              },
+              {
+                "label": "Electronics and Telecommunication ",
+                "value": {
+                  "input": {
+                    "text": "EXTC"
+                  }
+                }
+              },
+              {
+                "label": "Mechanical Department",
+                "value": {
+                  "input": {
+                    "text": "Mechanical"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:department",
+      "dialog_node": "response_10_1601803944336",
+      "previous_sibling": "response_7_1601803895072"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes we have PG course in Computer Engineering, Thermal and Civil Engg"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:(master degree)",
+      "dialog_node": "response_10_1601804035191",
+      "previous_sibling": "response_8_1601804004009"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Very Good Evening Dear !!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1601789140588",
+      "conditions": "@greeting:(Good Evening)",
+      "dialog_node": "response_2_1601789402002",
+      "previous_sibling": "response_10_1601789366178"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "source": "http://www.orchidengg.ac.in/wp-content/uploads/2019/05/rec1.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:placement",
+      "dialog_node": "response_2_1601806224666",
+      "previous_sibling": "response_5_1601806199115"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "EXTC Dept. at NKOCET has taken development as a continuous process and has assured this through upgrading the academic programs, research infrastructure and laboratories."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1601809517507",
+      "conditions": "@department:EXTC",
+      "dialog_node": "response_2_1601809807012",
+      "previous_sibling": "response_4_1601809713891"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The Mechanical Engineering Department is continuously striving to achieve excellence in Academics &Technical Education as well as in Projects in service to the society."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1601809517507",
+      "conditions": "@department:Mechanical",
+      "dialog_node": "response_2_1601809858508",
+      "previous_sibling": "response_2_1601809807012"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes We have Sports ground as well as well equipped gymnasium"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:(sports ground)",
+      "dialog_node": "response_3_1601804075790",
+      "previous_sibling": "response_8_1601805191107"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello !!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1601789140588",
+      "conditions": "@greeting:Hello",
+      "dialog_node": "response_3_1601808626189",
+      "previous_sibling": "response_7_1601789424834"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Very Good Morning Dear !!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1601789140588",
+      "conditions": "@greeting:(Good Morning)",
+      "dialog_node": "response_4_1601789343120"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Pradnya Niketan Education Society Pune's  N K Orchid College Of Engineering & Technology, Solapur Gat No.16,Solapur-Tuljapur Road, Near Mashroom Ganapati Temple, Tale-Hipparaga, Solapur-413002"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:address",
+      "dialog_node": "response_4_1601806789438",
+      "previous_sibling": "response_5_1601806666315"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The Computer Science & Engineering Department is well equipped to impart the latest knowledge demanded by the industries with intake of 120."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1601809517507",
+      "conditions": "@department:Computer",
+      "dialog_node": "response_4_1601809559419"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "There is continuous accelerated growing demand of electricity in our country due to growing industrialization and changing life style of our people."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1601809517507",
+      "conditions": "@department:Electrical",
+      "dialog_node": "response_4_1601809713891",
+      "previous_sibling": "response_8_1601809632027"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "source": "http://www.orchidengg.ac.in/wp-content/uploads/2019/05/rec1.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:Company",
+      "dialog_node": "response_5_1601806199115",
+      "previous_sibling": "response_3_1601804075790"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Phone: 094230 84363  Email: office@orchidengg.ac.in  contactus@orchidengg.ac.in"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:contact",
+      "dialog_node": "response_5_1601806666315",
+      "previous_sibling": "response_2_1601806224666"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Night Dear !!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1601789140588",
+      "conditions": "@greeting:(Good Night)",
+      "dialog_node": "response_7_1601789424834",
+      "previous_sibling": "response_2_1601789402002"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Its 90,000 for this Academic Year"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:fees",
+      "dialog_node": "response_7_1601803849419",
+      "previous_sibling": "node_5_1601809517507"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Dr. J. B. Dafedar "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:principal",
+      "dialog_node": "response_7_1601803895072",
+      "previous_sibling": "response_7_1601803849419"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Dr. S. D. Raut for CSE"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:hod",
+      "dialog_node": "response_8_1601804004009",
+      "previous_sibling": "response_10_1601803944336"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "1) CSE-120 2)EXTC-60 3)Electrical-60 4) Mechanical-120 5) Civil-120"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1601803812310",
+      "conditions": "@enquiry:intake",
+      "dialog_node": "response_8_1601805191107",
+      "previous_sibling": "response_10_1601804035191"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The department of civil Engineering is established form the inception of college with the intake of 120."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1601809517507",
+      "conditions": "@department:Civil",
+      "dialog_node": "response_8_1601809632027",
+      "previous_sibling": "response_4_1601809559419"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi !!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1601789140588",
+      "conditions": "anything_else",
+      "dialog_node": "response_9_1601789489907",
+      "previous_sibling": "response_3_1601808626189"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome to N. K. Orchid College of Engg. and Tech. Solapur. I am CollegeBot, What is your name and please type in your contact number(Please start with +91 e.g. +919922XXXXXX). "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "CollegeBot",
+  "language": "en",
+  "description": ""
+}
